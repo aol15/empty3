@@ -1,0 +1,40 @@
+{
+  "$type": "Comindware.Platform.Contracts.UserCommandConfigurationModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "UserCommand",
+    "Owner": "ItellaTest",
+    "Alias": "generateXlsx"
+  },
+  "Name": "Сгенерировать отчет",
+  "IsSystem": false,
+  "IsDisabled": false,
+  "IsPrepare": false,
+  "SkipValidation": false,
+  "Context": "Record",
+  "Multiplicity": "OneByOne",
+  "Kind": "Script",
+  "ResultType": "DataChange",
+  "ScriptRule": {
+    "$type": "Comindware.Platform.Contracts.UserCommandScriptRuleModel, Comindware.Platform.Contracts",
+    "Type": "UserCommandScript",
+    "Definition": {
+      "$type": "Comindware.Platform.Contracts.CSharpRuleDefinitionModel, Comindware.Platform.Contracts",
+      "EntryPoint": "Script",
+      "References": {
+        "$type": "System.String[], mscorlib",
+        "$values": [
+          null
+        ]
+      },
+      "Code": "using System;\r\nusing System.IO;\r\nusing System.Collections.Generic;\r\nusing System.Linq;\r\nusing Comindware.Data.Entity;\r\nusing Comindware.TeamNetwork.Api.Data.UserCommands;\r\nusing Comindware.TeamNetwork.Api.Data;\r\nusing Aspose.Cells;\r\nusing Aspose.Cells.Pivot;\r\n\r\npublic class Script\r\n{\r\n \tpublic static void Main(Comindware.Process.Api.Data.ScriptContext context, Comindware.Entities entities)\r\n    {\r\n        var objectId = context.BusinessObjectId;\r\n        var businessObject = Api.TeamNetwork.ObjectService.Get(objectId);\r\n        var periodStart = (DateTime) businessObject[\"op.1820\"];\r\n        var periodEnd = (DateTime) businessObject[\"op.1821\"];\r\n        var taskInfoList = new List<TaskInfo>();\r\n        //Get all tasks\r\n        var allTasks = Api.TeamNetwork.UserTaskService.ListAllTasks().ToList();\r\n        foreach (var task in allTasks)\r\n        {\r\n            if(task.CreationDate.CompareTo(periodStart) == 1 && task.CreationDate.CompareTo(periodEnd) == -1)\r\n            {\r\n                var process = Api.Process.ProcessObjectService.Get(task.Parent);\r\n                var estimate = task.EstimatedWork != default(TimeSpan) ? task.EstimatedWork : null;\r\n                var assignee = task.Assignee != null ? Api.Base.AccountService.GetAccount(task.Assignee).FullName : null;\r\n                taskInfoList.Add(new TaskInfo()\r\n                {\r\n                    ProcessId = task.Parent,\r\n                    ProcessTitle = process.Title,\r\n                    ProcessStatus = process.Status,\r\n                    TaskTitle = task.Title,\r\n                    Assignee = assignee,\r\n                    CreationDate = task.CreationDate,\r\n                    CompletionDate = task.CompletionDate,\r\n                    ActualWorkTime = task.CompletionDate != null ? task.CompletionDate - task.CreationDate : null,\r\n                    ScheduledEndDate = task.ScheduledEndDate, //.Equals(task.CompletionDate) ? null : task.ScheduledEndDate,\r\n                    EstimatedWork = estimate,\r\n                });\r\n            }\r\n        }\r\n        string documentId = null;\r\n        using(var ms = new MemoryStream())\r\n        {\r\n            // Set Aspose License \r\n            Api.TeamNetwork.ObjectAppExportService.InitAspose();\r\n\r\n            var wb = new Workbook();\r\n            var cells = wb.Worksheets[0].Cells;\r\n            cells[0,0].PutValue(\"ИД экземпляра\");\r\n            cells[0,1].PutValue(\"Название процесса\");\r\n            cells[0,2].PutValue(\"Статус экземляра процесса\");\r\n            cells[0,3].PutValue(\"Название задачи\");\r\n            cells[0,4].PutValue(\"Исполнитель\");\r\n            cells[0,5].PutValue(\"Дата получения задачи\");\r\n            cells[0,6].PutValue(\"Фактическая дата завершения задачи\");\r\n            cells[0,7].PutValue(\"Фактическая длительность выполнения\");\r\n            cells[0,8].PutValue(\"Плановая дата завершения задачи\");\r\n            cells[0,9].PutValue(\"Плановая длительность выполнения\");\r\n            var row = 1;\r\n            foreach(var ti in taskInfoList)\r\n            {\r\n                cells[row,0].PutValue(ti.ProcessId);\r\n                cells[row,1].PutValue(ti.ProcessTitle);\r\n                cells[row,2].PutValue(ti.ProcessStatus.ToString());\r\n                cells[row,3].PutValue(ti.TaskTitle);\r\n                cells[row,4].PutValue(ti.Assignee);\r\n                cells[row,5].PutValue(ti.CreationDate.ToString(\"G\"));\r\n                cells[row,6].PutValue(ti.CompletionDate?.ToString(\"G\"));\r\n                cells[row,7].PutValue(ti.ActualWorkTime?.ToString(@\"dd\\:hh\\:mm\\:ss\"));\r\n                cells[row,8].PutValue(ti.ScheduledEndDate?.ToString(\"G\"));                \r\n                cells[row,9].PutValue(ti.EstimatedWork?.ToString(@\"dd\\:hh\\:mm\\:ss\"));\r\n                row++;\r\n            }\r\n            wb.Save(ms, SaveFormat.Xlsx);\r\n            ms.Seek(0, SeekOrigin.Begin);\r\n            var docTitle = \"Отчет_\" + $\"{DateTime.Now}\" + \".xlsx\";\r\n            documentId = Api.TeamNetwork.DocumentService.CreateDocumentWithStream(new Document() {Title = docTitle}, ms, docTitle);\r\n        }\r\n        \r\n        if(documentId != null)\r\n        {\r\n\t\t    var dict = new Dictionary<string, object>() {{\"op.1823\", documentId}};\r\n            Api.TeamNetwork.ObjectService.Edit(objectId, dict);\r\n        }       \r\n    }\r\n\r\n    class TaskInfo\r\n    {\r\n        public string ProcessId { get; set; }\r\n        \r\n        public string ProcessTitle { get; set; }\r\n\r\n        public Comindware.Process.Api.Data.ProcessStatus ProcessStatus { get; set; }\r\n\r\n        public string TaskTitle { get; set; }\r\n\r\n        public DateTime CreationDate { get; set; }\r\n\r\n        public DateTime? CompletionDate { get; set; }\r\n\r\n        public string Assignee { get; set; }\r\n\r\n        public TimeSpan? ActualWorkTime { get; set; }\r\n\r\n        public DateTime? ScheduledStartDate { get; set; }\r\n\r\n        public DateTime? ScheduledEndDate { get; set; }\r\n\r\n        public TimeSpan? EstimatedWork { get; set; }\r\n    }\r\n}",
+      "Type": "CSharpExpression"
+    }
+  },
+  "RelatedEntityGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "LockStateChangeType": "Undefined",
+  "LockStateVisibilityType": "Undefined"
+}

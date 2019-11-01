@@ -1,0 +1,48 @@
+{
+  "$type": "Comindware.Platform.Contracts.UserCommandConfigurationModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "UserCommand",
+    "Owner": "Sprint",
+    "Alias": "buildPlanSync"
+  },
+  "Name": "Синхронизировать с планом выпуска релизов",
+  "IsSystem": false,
+  "IsDisabled": false,
+  "IsPrepare": false,
+  "SkipValidation": false,
+  "Context": "Record",
+  "Multiplicity": "OneByOne",
+  "Kind": "Script",
+  "ResultType": "DataChange",
+  "ConfirmationModelConfiguration": {
+    "$type": "Comindware.Platform.Contracts.UserCommandConfirmationModel, Comindware.Platform.Contracts",
+    "Title": "Синхронизация с планом выпуска билдов",
+    "Text": "Подтвердите синхронизацию",
+    "YesButtonText": "Выполнить",
+    "NoButtonText": "Отмена",
+    "Severity": "None"
+  },
+  "ScriptRule": {
+    "$type": "Comindware.Platform.Contracts.UserCommandScriptRuleModel, Comindware.Platform.Contracts",
+    "Type": "UserCommandScript",
+    "Definition": {
+      "$type": "Comindware.Platform.Contracts.CSharpRuleDefinitionModel, Comindware.Platform.Contracts",
+      "EntryPoint": "Script",
+      "References": {
+        "$type": "System.String[], mscorlib",
+        "$values": [
+          null
+        ]
+      },
+      "Code": "using System; \r\nusing System.Collections.Generic;\r\nusing System.Linq;\r\nusing Comindware.Data.Entity;\r\nusing Comindware.TeamNetwork.Api.Data.UserCommands;\r\nusing Comindware.TeamNetwork.Api.Data;\r\n\r\nclass Script\r\n{\r\n    public static UserCommandResult Main(UserCommandContext userCommandContext, Comindware.Entities entities)\r\n    {\r\n        \r\n\t\tvar sprint = Api.TeamNetwork.ObjectService.GetWithAlias (\"Sprint\", userCommandContext.ObjectIds[0]);\r\n\t\t\r\n\t\tDictionary<string,object> data = new Dictionary<string,object>()\r\n\t\t{\r\n\t\t\t{\"sprint\", userCommandContext.ObjectIds[0]},\r\n\t\t\t{\"buildPlanDate\", sprint.ContainsKey(\"End\") ? sprint[\"End\"] : DateTime.Now},\r\n\t\t\t{\"buildPlanTitle\", sprint.ContainsKey(\"Title\") ? sprint[\"Title\"] : null},\r\n\t\t};\r\n\t\t// пройдем по ишшу\r\n\t\tList<object> l = new List<object>();\r\n\t\tif (sprint.ContainsKey(\"Issues\"))\r\n\t\t\tforeach (var issue in sprint[\"Issues\"] as IEnumerable<object>)\r\n\t\t\t{\r\n\t\t\t\tvar issueInfo = Api.TeamNetwork.ObjectService.GetWithAlias (\"Issue\", issue.ToString());\r\n\t\t\t\tif (issueInfo.ContainsKey(\"publicIssueFlag\") ? (bool)issueInfo[\"publicIssueFlag\"] : false)\r\n\t\t\t\t\tl.Add(issue);\r\n\t\t\t}\r\n\t\t\t\r\n\t\tdata[\"issues\"] = l;\r\n\t\t\r\n\t\tif (sprint.ContainsKey (\"buildPlan\") ? (sprint [\"buildPlan\"] as IEnumerable<object>).Any() : false)\r\n\t\t{\r\n\t\t\tforeach (var bPlan in sprint[\"buildPlan\"] as IEnumerable<object>)\r\n\t\t\t{\r\n\t\t\t\tvar bPlanInfo = Api.TeamNetwork.ObjectService.GetWithAlias (\"buildsPlan\", bPlan.ToString());\r\n\t\t\t\tif (bPlanInfo.ContainsKey (\"buildPlanDate\"))\r\n\t\t\t\t\tdata[\"buildPlanDate\"] = bPlanInfo[\"buildPlanDate\"];\r\n\t\t\t\tApi.TeamNetwork.ObjectService.EditWithAlias(\"buildsPlan\", bPlan.ToString(), data);\r\n\t\t\t}\r\n\t\t}\r\n\t\telse{\r\n\t\t\tApi.TeamNetwork.ObjectService.CreateWithAlias(\"buildsPlan\", data);\r\n/* var resulttest = new UserCommandResult\r\n{Success = false,Commited = false,ResultType = UserCommandResultType.Notificate,Messages = new[]\r\n\t{new UserCommandMessage{Severity = SeverityLevel.Critical,Text = \"ok\"}}\r\n};\r\nreturn resulttest; */\r\n\t\t}\t\t\r\n\r\n\t\tvar result = new UserCommandResult\r\n\t\t{\r\n\t\t\tSuccess = true,\r\n\t\t\tCommited = true,\r\n\t\t\tResultType = UserCommandResultType.DataChange,\r\n\t\t\tMessages = new[]\r\n\t\t\t{\r\n\t\t\t\tnew UserCommandMessage\r\n\t\t\t\t{\r\n\t\t\t\t\tSeverity = SeverityLevel.Normal,\r\n\t\t\t\t\tText = \"Синхронизация успешно выполнена\"\r\n\t\t\t\t}\r\n\r\n\t\t\t}\r\n\t\t};\r\n\r\n\t\treturn result;\r\n    }\r\n}",
+      "Type": "CSharpExpression"
+    }
+  },
+  "RelatedEntityGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "LockStateChangeType": "Undefined",
+  "LockStateVisibilityType": "Undefined"
+}

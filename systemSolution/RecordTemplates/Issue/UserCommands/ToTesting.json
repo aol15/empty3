@@ -1,0 +1,40 @@
+{
+  "$type": "Comindware.Platform.Contracts.UserCommandConfigurationModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "UserCommand",
+    "Owner": "Issue",
+    "Alias": "ToTesting"
+  },
+  "Name": "На Тестирование",
+  "IsSystem": false,
+  "IsDisabled": false,
+  "IsPrepare": false,
+  "SkipValidation": true,
+  "Context": "Record",
+  "Multiplicity": "OneByOne",
+  "Kind": "Script",
+  "ResultType": "DataChange",
+  "ScriptRule": {
+    "$type": "Comindware.Platform.Contracts.UserCommandScriptRuleModel, Comindware.Platform.Contracts",
+    "Type": "UserCommandScript",
+    "Definition": {
+      "$type": "Comindware.Platform.Contracts.CSharpRuleDefinitionModel, Comindware.Platform.Contracts",
+      "EntryPoint": "Script",
+      "References": {
+        "$type": "System.String[], mscorlib",
+        "$values": [
+          null
+        ]
+      },
+      "Code": "using System;\r\nusing System.Collections.Generic;\r\nusing System.Linq;\r\nusing Comindware.Data.Entity;\r\nusing Comindware.TeamNetwork.Api.Data.UserCommands;\r\n\r\npublic class Script\r\n{\r\n    public static UserCommandResult Main(UserCommandContext userCommandContext, Comindware.Entities entities)\r\n    {\r\n        var statusId = entities.IssueStatus.Where(x => x.code == \"acceptance\").Select(x => x.id).FirstOrDefault();\r\n        foreach (var objectId in userCommandContext.ObjectIds)\r\n        {\r\n            var data = new Dictionary<string, object>\r\n            {\r\n                 { \"Status\", statusId}\r\n            };\r\n            Api.TeamNetwork.ObjectService.EditWithAlias(\"Issue\", objectId, data);\r\n        }\r\n        \r\n        var result = new UserCommandResult\r\n        {\r\n            Success = true,\r\n            Commited = true,\r\n            ResultType = UserCommandResultType.DataChange,\r\n            Messages = new[]\r\n            {\r\n                new UserCommandMessage\r\n                {\r\n                    Severity = SeverityLevel.Normal,\r\n                    Text = \"Выполнено\"\r\n                }\r\n            }\r\n        };\r\n\r\n        return result;\r\n    }\r\n}\r\n\r\n",
+      "Type": "CSharpExpression"
+    }
+  },
+  "RelatedEntityGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "LockStateChangeType": "Undefined",
+  "LockStateVisibilityType": "Undefined"
+}

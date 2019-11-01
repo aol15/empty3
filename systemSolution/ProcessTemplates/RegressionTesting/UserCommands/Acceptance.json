@@ -1,0 +1,48 @@
+{
+  "$type": "Comindware.Platform.Contracts.UserCommandConfigurationModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "UserCommand",
+    "Owner": "RegressionTesting",
+    "Alias": "Acceptance"
+  },
+  "Name": "Выполнено",
+  "IsSystem": false,
+  "IsDisabled": false,
+  "IsPrepare": false,
+  "SkipValidation": false,
+  "Context": "Task",
+  "Multiplicity": "OneByOne",
+  "Kind": "Script",
+  "ResultType": "Navigate",
+  "ConfirmationModelConfiguration": {
+    "$type": "Comindware.Platform.Contracts.UserCommandConfirmationModel, Comindware.Platform.Contracts",
+    "Title": "Новая операция",
+    "Text": "Подтвердить выполнение операции",
+    "YesButtonText": "Выполнить",
+    "NoButtonText": "Отмена",
+    "Severity": "None"
+  },
+  "ScriptRule": {
+    "$type": "Comindware.Platform.Contracts.UserCommandScriptRuleModel, Comindware.Platform.Contracts",
+    "Type": "UserCommandScript",
+    "Definition": {
+      "$type": "Comindware.Platform.Contracts.CSharpRuleDefinitionModel, Comindware.Platform.Contracts",
+      "EntryPoint": "Script",
+      "References": {
+        "$type": "System.String[], mscorlib",
+        "$values": [
+          null
+        ]
+      },
+      "Code": "using System;\r\nusing System.Collections.Generic;\r\nusing System.Linq;\r\nusing Comindware.Data.Entity;\r\nusing Comindware.TeamNetwork.Api.Data.UserCommands;\r\n\r\npublic class Script\r\n{\r\n    public static UserCommandResult Main(UserCommandContext userCommandContext, Comindware.Entities entities)\r\n    {\r\n        var statusId = \"61757\";\r\n        var CurrentTaskid = userCommandContext.ObjectIds[0];\r\n        var businessObjectId = Api.TeamNetwork.UserTaskService.GetBusinessObject(CurrentTaskid.ToString());\r\n        var data = new Dictionary<string, object>\r\n        {\r\n            { \"Status\", statusId}\r\n        };\r\n        Api.TeamNetwork.ObjectService.EditWithAlias(\"Issue\", businessObjectId, data);\r\n        Api.TeamNetwork.UserTaskService.Complete(CurrentTaskid, false);\r\n        var result = new UserCommandResult\r\n        {\r\n            Success = true,\r\n            Commited = true,\r\n            ResultType = UserCommandResultType.DataChange,\r\n            Messages = new[]\r\n            {\r\n                new UserCommandMessage\r\n                {\r\n                    Severity = SeverityLevel.Normal,\r\n                    Text = \"Выполнено\"\r\n                }\r\n            }\r\n        };\r\n\r\n        return result;\r\n    }\r\n}",
+      "Type": "CSharpExpression"
+    }
+  },
+  "RelatedEntityGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "LockStateChangeType": "Undefined",
+  "LockStateVisibilityType": "Undefined"
+}

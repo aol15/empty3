@@ -1,0 +1,12 @@
+{
+  "$type": "Comindware.Platform.Contracts.FormModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Form",
+    "Owner": "ActualExpenditures",
+    "Alias": "defaultForm"
+  },
+  "IsDefault": false,
+  "Name": "Фактические затраты - Основная форма",
+  "Origination": "Undefined"
+}

@@ -1,0 +1,12 @@
+{
+  "$type": "Comindware.Platform.Contracts.FormModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Form",
+    "Owner": "Issue",
+    "Alias": "Configuration"
+  },
+  "IsDefault": false,
+  "Name": "Configuration",
+  "Origination": "Undefined"
+}
