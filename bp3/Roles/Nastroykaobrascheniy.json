@@ -18,12 +18,12 @@
       "Type": "RoleConfiguration",
       "Alias": "Nastroykaobrascheniy"
     },
-    "Name": "System business app",
+    "Name": "bp3",
     "Description": "System business application",
     "Target": {
       "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
       "Type": "Solution",
-      "Alias": "systemSolution"
+      "Alias": "bp3"
     },
     "Children": {
       "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",

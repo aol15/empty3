@@ -18,12 +18,12 @@
       "Type": "RoleConfiguration",
       "Alias": "BugReader"
     },
-    "Name": "System business app",
+    "Name": "bp3",
     "Description": "BusinessApp",
     "Target": {
       "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
       "Type": "Solution",
-      "Alias": "systemSolution"
+      "Alias": "bp3"
     },
     "Children": {
       "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
@@ -35,11 +35,11 @@
             "Type": "RoleConfiguration",
             "Alias": "BugReader"
           },
-          "Name": "Team",
+          "Name": "Issue Area",
           "Target": {
             "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
             "Type": "RecordTemplate",
-            "Alias": "Team"
+            "Alias": "IssueArea"
           },
           "Children": {
             "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
@@ -56,11 +56,11 @@
             "Type": "RoleConfiguration",
             "Alias": "BugReader"
           },
-          "Name": "Project Milestones",
+          "Name": "Priority",
           "Target": {
             "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
             "Type": "RecordTemplate",
-            "Alias": "ProjectMilestones"
+            "Alias": "Priority"
           },
           "Children": {
             "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
@@ -77,11 +77,11 @@
             "Type": "RoleConfiguration",
             "Alias": "BugReader"
           },
-          "Name": "Сборки",
+          "Name": "Severity",
           "Target": {
             "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
             "Type": "RecordTemplate",
-            "Alias": "BuildInfo"
+            "Alias": "Severity"
           },
           "Children": {
             "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
@@ -98,116 +98,11 @@
             "Type": "RoleConfiguration",
             "Alias": "BugReader"
           },
-          "Name": "Обращения",
+          "Name": "Issue Status",
           "Target": {
             "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
             "Type": "RecordTemplate",
-            "Alias": "Requests"
-          },
-          "Children": {
-            "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
-            "$values": []
-          },
-          "TargetType": "RecordTemplate",
-          "Privileges": "Read",
-          "AvailablePrivileges": "ContextUserExpression, ContextObjectCondition, Read, Create, Update, Delete, FullAccess"
-        },
-        {
-          "$type": "Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts",
-          "Role": {
-            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
-            "Type": "RoleConfiguration",
-            "Alias": "BugReader"
-          },
-          "Name": "Sprint",
-          "Target": {
-            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
-            "Type": "RecordTemplate",
-            "Alias": "Sprint"
-          },
-          "Children": {
-            "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
-            "$values": []
-          },
-          "TargetType": "RecordTemplate",
-          "Privileges": "Read",
-          "AvailablePrivileges": "ContextUserExpression, ContextObjectCondition, Read, Create, Update, Delete, FullAccess"
-        },
-        {
-          "$type": "Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts",
-          "Role": {
-            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
-            "Type": "RoleConfiguration",
-            "Alias": "BugReader"
-          },
-          "Name": "Проекты",
-          "Target": {
-            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
-            "Type": "RecordTemplate",
-            "Alias": "Project"
-          },
-          "Children": {
-            "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
-            "$values": []
-          },
-          "TargetType": "RecordTemplate",
-          "Privileges": "Read",
-          "AvailablePrivileges": "ContextUserExpression, ContextObjectCondition, Read, Create, Update, Delete, FullAccess"
-        },
-        {
-          "$type": "Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts",
-          "Role": {
-            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
-            "Type": "RoleConfiguration",
-            "Alias": "BugReader"
-          },
-          "Name": "Story",
-          "Target": {
-            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
-            "Type": "RecordTemplate",
-            "Alias": "Story"
-          },
-          "Children": {
-            "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
-            "$values": []
-          },
-          "TargetType": "RecordTemplate",
-          "Privileges": "Read",
-          "AvailablePrivileges": "ContextUserExpression, ContextObjectCondition, Read, Create, Update, Delete, FullAccess"
-        },
-        {
-          "$type": "Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts",
-          "Role": {
-            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
-            "Type": "RoleConfiguration",
-            "Alias": "BugReader"
-          },
-          "Name": "Release",
-          "Target": {
-            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
-            "Type": "RecordTemplate",
-            "Alias": "Release"
-          },
-          "Children": {
-            "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
-            "$values": []
-          },
-          "TargetType": "RecordTemplate",
-          "Privileges": "Read",
-          "AvailablePrivileges": "ContextUserExpression, ContextObjectCondition, Read, Create, Update, Delete, FullAccess"
-        },
-        {
-          "$type": "Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts",
-          "Role": {
-            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
-            "Type": "RoleConfiguration",
-            "Alias": "BugReader"
-          },
-          "Name": "Reason To Close",
-          "Target": {
-            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
-            "Type": "RecordTemplate",
-            "Alias": "ReasonToClose"
+            "Alias": "IssueStatus"
           },
           "Children": {
             "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
@@ -246,11 +141,11 @@
             "Type": "RoleConfiguration",
             "Alias": "BugReader"
           },
-          "Name": "Issue Status",
+          "Name": "Reason To Close",
           "Target": {
             "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
             "Type": "RecordTemplate",
-            "Alias": "IssueStatus"
+            "Alias": "ReasonToClose"
           },
           "Children": {
             "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
@@ -267,11 +162,11 @@
             "Type": "RoleConfiguration",
             "Alias": "BugReader"
           },
-          "Name": "Severity",
+          "Name": "Release",
           "Target": {
             "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
             "Type": "RecordTemplate",
-            "Alias": "Severity"
+            "Alias": "Release"
           },
           "Children": {
             "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
@@ -288,11 +183,11 @@
             "Type": "RoleConfiguration",
             "Alias": "BugReader"
           },
-          "Name": "Priority",
+          "Name": "Story",
           "Target": {
             "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
             "Type": "RecordTemplate",
-            "Alias": "Priority"
+            "Alias": "Story"
           },
           "Children": {
             "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
@@ -309,11 +204,116 @@
             "Type": "RoleConfiguration",
             "Alias": "BugReader"
           },
-          "Name": "Issue Area",
+          "Name": "Проекты",
           "Target": {
             "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
             "Type": "RecordTemplate",
-            "Alias": "IssueArea"
+            "Alias": "Project"
+          },
+          "Children": {
+            "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
+            "$values": []
+          },
+          "TargetType": "RecordTemplate",
+          "Privileges": "Read",
+          "AvailablePrivileges": "ContextUserExpression, ContextObjectCondition, Read, Create, Update, Delete, FullAccess"
+        },
+        {
+          "$type": "Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts",
+          "Role": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "RoleConfiguration",
+            "Alias": "BugReader"
+          },
+          "Name": "Sprint",
+          "Target": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "RecordTemplate",
+            "Alias": "Sprint"
+          },
+          "Children": {
+            "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
+            "$values": []
+          },
+          "TargetType": "RecordTemplate",
+          "Privileges": "Read",
+          "AvailablePrivileges": "ContextUserExpression, ContextObjectCondition, Read, Create, Update, Delete, FullAccess"
+        },
+        {
+          "$type": "Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts",
+          "Role": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "RoleConfiguration",
+            "Alias": "BugReader"
+          },
+          "Name": "Обращения",
+          "Target": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "RecordTemplate",
+            "Alias": "Requests"
+          },
+          "Children": {
+            "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
+            "$values": []
+          },
+          "TargetType": "RecordTemplate",
+          "Privileges": "Read",
+          "AvailablePrivileges": "ContextUserExpression, ContextObjectCondition, Read, Create, Update, Delete, FullAccess"
+        },
+        {
+          "$type": "Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts",
+          "Role": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "RoleConfiguration",
+            "Alias": "BugReader"
+          },
+          "Name": "Сборки",
+          "Target": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "RecordTemplate",
+            "Alias": "BuildInfo"
+          },
+          "Children": {
+            "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
+            "$values": []
+          },
+          "TargetType": "RecordTemplate",
+          "Privileges": "Read",
+          "AvailablePrivileges": "ContextUserExpression, ContextObjectCondition, Read, Create, Update, Delete, FullAccess"
+        },
+        {
+          "$type": "Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts",
+          "Role": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "RoleConfiguration",
+            "Alias": "BugReader"
+          },
+          "Name": "Project Milestones",
+          "Target": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "RecordTemplate",
+            "Alias": "ProjectMilestones"
+          },
+          "Children": {
+            "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
+            "$values": []
+          },
+          "TargetType": "RecordTemplate",
+          "Privileges": "Read",
+          "AvailablePrivileges": "ContextUserExpression, ContextObjectCondition, Read, Create, Update, Delete, FullAccess"
+        },
+        {
+          "$type": "Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts",
+          "Role": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "RoleConfiguration",
+            "Alias": "BugReader"
+          },
+          "Name": "Team",
+          "Target": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "RecordTemplate",
+            "Alias": "Team"
           },
           "Children": {
             "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",

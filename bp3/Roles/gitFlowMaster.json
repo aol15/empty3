@@ -1,10 +1,10 @@
 {
   "$type": "Comindware.Platform.Contracts.RoleConfigurationModel, Comindware.Platform.Contracts",
-  "Name": "мастерИнтеграцииСГитРепозиторием",
+  "Name": "Git Flow Master",
   "GlobalAlias": {
     "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
     "Type": "RoleConfiguration",
-    "Alias": "masterIntegratsiiSGitRepozitoriem"
+    "Alias": "gitFlowMaster"
   },
   "IsActive": true,
   "Members": {
@@ -16,14 +16,14 @@
     "Role": {
       "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
       "Type": "RoleConfiguration",
-      "Alias": "masterIntegratsiiSGitRepozitoriem"
+      "Alias": "gitFlowMaster"
     },
-    "Name": "System business app",
-    "Description": "System business application",
+    "Name": "bp3",
+    "Description": "BusinessApp",
     "Target": {
       "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
       "Type": "Solution",
-      "Alias": "systemSolution"
+      "Alias": "bp3"
     },
     "Children": {
       "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
@@ -33,19 +33,19 @@
           "Role": {
             "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
             "Type": "RoleConfiguration",
-            "Alias": "masterIntegratsiiSGitRepozitoriem"
+            "Alias": "gitFlowMaster"
           },
-          "Name": "PullRequestProcess",
+          "Name": "Статус пул реквеста",
           "Target": {
             "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
             "Type": "RecordTemplate",
-            "Alias": "PullRequestProcess"
+            "Alias": "PullRequestStatus"
           },
           "Children": {
             "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
             "$values": []
           },
-          "TargetType": "ProcessTemplate",
+          "TargetType": "RecordTemplate",
           "Privileges": "Read, Create, Update, Delete, Execute",
           "AvailablePrivileges": "ContextUserExpression, ContextObjectCondition, Read, Create, Update, Delete, FullAccess"
         },
@@ -54,7 +54,28 @@
           "Role": {
             "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
             "Type": "RoleConfiguration",
-            "Alias": "masterIntegratsiiSGitRepozitoriem"
+            "Alias": "gitFlowMaster"
+          },
+          "Name": "Информация о пул реквесте",
+          "Target": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "RecordTemplate",
+            "Alias": "PullRequestInfo"
+          },
+          "Children": {
+            "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
+            "$values": []
+          },
+          "TargetType": "RecordTemplate",
+          "Privileges": "Read, Create, Update, Delete, Execute",
+          "AvailablePrivileges": "ContextUserExpression, ContextObjectCondition, Read, Create, Update, Delete, FullAccess"
+        },
+        {
+          "$type": "Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts",
+          "Role": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "RoleConfiguration",
+            "Alias": "gitFlowMaster"
           },
           "Name": "PullRequestMeta",
           "Target": {
@@ -75,35 +96,13 @@
           "Role": {
             "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
             "Type": "RoleConfiguration",
-            "Alias": "masterIntegratsiiSGitRepozitoriem"
+            "Alias": "gitFlowMaster"
           },
-          "Name": "Issues",
-          "Description": "Issue",
+          "Name": "PullRequestProcess",
           "Target": {
             "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
             "Type": "RecordTemplate",
-            "Alias": "Issue"
-          },
-          "Children": {
-            "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
-            "$values": []
-          },
-          "TargetType": "RecordTemplate",
-          "Privileges": "Read, Create, Update, Delete, Execute",
-          "AvailablePrivileges": "ContextUserExpression, ContextObjectCondition, Read, Create, Update, Delete, FullAccess"
-        },
-        {
-          "$type": "Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts",
-          "Role": {
-            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
-            "Type": "RoleConfiguration",
-            "Alias": "masterIntegratsiiSGitRepozitoriem"
-          },
-          "Name": "BuildProcess",
-          "Target": {
-            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
-            "Type": "RecordTemplate",
-            "Alias": "BuildProcess"
+            "Alias": "PullRequestProcess"
           },
           "Children": {
             "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
@@ -118,28 +117,7 @@
           "Role": {
             "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
             "Type": "RoleConfiguration",
-            "Alias": "masterIntegratsiiSGitRepozitoriem"
-          },
-          "Name": "Build types",
-          "Target": {
-            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
-            "Type": "RecordTemplate",
-            "Alias": "buildTypes"
-          },
-          "Children": {
-            "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
-            "$values": []
-          },
-          "TargetType": "RecordTemplate",
-          "Privileges": "Read, Create, Update, Delete, Execute",
-          "AvailablePrivileges": "ContextUserExpression, ContextObjectCondition, Read, Create, Update, Delete, FullAccess"
-        },
-        {
-          "$type": "Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts",
-          "Role": {
-            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
-            "Type": "RoleConfiguration",
-            "Alias": "masterIntegratsiiSGitRepozitoriem"
+            "Alias": "gitFlowMaster"
           },
           "Name": "Сборки",
           "Target": {
@@ -160,19 +138,19 @@
           "Role": {
             "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
             "Type": "RoleConfiguration",
-            "Alias": "masterIntegratsiiSGitRepozitoriem"
+            "Alias": "gitFlowMaster"
           },
-          "Name": "Информация о пул реквесте",
+          "Name": "BuildProcess",
           "Target": {
             "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
             "Type": "RecordTemplate",
-            "Alias": "PullRequestInfo"
+            "Alias": "BuildProcess"
           },
           "Children": {
             "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
             "$values": []
           },
-          "TargetType": "RecordTemplate",
+          "TargetType": "ProcessTemplate",
           "Privileges": "Read, Create, Update, Delete, Execute",
           "AvailablePrivileges": "ContextUserExpression, ContextObjectCondition, Read, Create, Update, Delete, FullAccess"
         }

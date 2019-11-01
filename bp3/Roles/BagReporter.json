@@ -1,10 +1,10 @@
 {
   "$type": "Comindware.Platform.Contracts.RoleConfigurationModel, Comindware.Platform.Contracts",
-  "Name": "Роль работы с отпусками",
+  "Name": "Баг репортер",
   "GlobalAlias": {
     "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
     "Type": "RoleConfiguration",
-    "Alias": "vacationRole"
+    "Alias": "BagReporter"
   },
   "IsActive": true,
   "Members": {
@@ -16,14 +16,14 @@
     "Role": {
       "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
       "Type": "RoleConfiguration",
-      "Alias": "vacationRole"
+      "Alias": "BagReporter"
     },
-    "Name": "System business app",
-    "Description": "BusinessApp",
+    "Name": "bp3",
+    "Description": "System business application",
     "Target": {
       "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
       "Type": "Solution",
-      "Alias": "systemSolution"
+      "Alias": "bp3"
     },
     "Children": {
       "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
@@ -33,41 +33,44 @@
           "Role": {
             "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
             "Type": "RoleConfiguration",
-            "Alias": "vacationRole"
+            "Alias": "BagReporter"
           },
-          "Name": "Согласование отпусков",
+          "Name": "Issues",
+          "Description": "Issue",
           "Target": {
             "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
             "Type": "RecordTemplate",
-            "Alias": "approveVacation"
+            "Alias": "Issue"
           },
           "Children": {
             "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
-            "$values": []
-          },
-          "TargetType": "ProcessTemplate",
-          "Privileges": "Read, Create, Execute",
-          "AvailablePrivileges": "ContextUserExpression, ContextObjectCondition, Read, Create, Update, Delete, FullAccess"
-        },
-        {
-          "$type": "Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts",
-          "Role": {
-            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
-            "Type": "RoleConfiguration",
-            "Alias": "vacationRole"
-          },
-          "Name": "Согласование отпусков",
-          "Target": {
-            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
-            "Type": "RecordTemplate",
-            "Alias": "approvingVacation"
-          },
-          "Children": {
-            "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
-            "$values": []
+            "$values": [
+              {
+                "$type": "Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts",
+                "Role": {
+                  "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                  "Type": "RoleConfiguration",
+                  "Alias": "BagReporter"
+                },
+                "Name": "Сохранить",
+                "Target": {
+                  "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                  "Type": "UserCommand",
+                  "Owner": "Issue",
+                  "Alias": "Save"
+                },
+                "Children": {
+                  "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
+                  "$values": []
+                },
+                "TargetType": "Operation",
+                "Privileges": "Execute",
+                "AvailablePrivileges": "Execute"
+              }
+            ]
           },
           "TargetType": "RecordTemplate",
-          "Privileges": "Read, Create, Execute",
+          "Privileges": "Update",
           "AvailablePrivileges": "ContextUserExpression, ContextObjectCondition, Read, Create, Update, Delete, FullAccess"
         }
       ]

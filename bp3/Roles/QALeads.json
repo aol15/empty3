@@ -18,12 +18,12 @@
       "Type": "RoleConfiguration",
       "Alias": "QALeads"
     },
-    "Name": "System business app",
+    "Name": "bp3",
     "Description": "System business application",
     "Target": {
       "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
       "Type": "Solution",
-      "Alias": "systemSolution"
+      "Alias": "bp3"
     },
     "Children": {
       "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
@@ -35,17 +35,17 @@
             "Type": "RoleConfiguration",
             "Alias": "QALeads"
           },
-          "Name": "Sanity Testing",
+          "Name": "Builds",
           "Target": {
             "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
             "Type": "RecordTemplate",
-            "Alias": "SanityTesting"
+            "Alias": "Builds"
           },
           "Children": {
             "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
             "$values": []
           },
-          "TargetType": "ProcessTemplate",
+          "TargetType": "RecordTemplate",
           "Privileges": "Read, Create, Update, Delete, Execute, FullAccess",
           "AvailablePrivileges": "ContextUserExpression, ContextObjectCondition, Read, Create, Update, Delete, FullAccess"
         },
@@ -56,32 +56,11 @@
             "Type": "RoleConfiguration",
             "Alias": "QALeads"
           },
-          "Name": "Regression Testing",
+          "Name": "Check New Functionality ",
           "Target": {
             "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
             "Type": "RecordTemplate",
-            "Alias": "RegressionTesting"
-          },
-          "Children": {
-            "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
-            "$values": []
-          },
-          "TargetType": "ProcessTemplate",
-          "Privileges": "Read, Create, Update, Delete, Execute, FullAccess",
-          "AvailablePrivileges": "ContextUserExpression, ContextObjectCondition, Read, Create, Update, Delete, FullAccess"
-        },
-        {
-          "$type": "Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts",
-          "Role": {
-            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
-            "Type": "RoleConfiguration",
-            "Alias": "QALeads"
-          },
-          "Name": "Issues Retest",
-          "Target": {
-            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
-            "Type": "RecordTemplate",
-            "Alias": "IssuesRetest"
+            "Alias": "CheckNewFunctionality"
           },
           "Children": {
             "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
@@ -119,11 +98,11 @@
             "Type": "RoleConfiguration",
             "Alias": "QALeads"
           },
-          "Name": "Check New Functionality ",
+          "Name": "Issues Retest",
           "Target": {
             "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
             "Type": "RecordTemplate",
-            "Alias": "CheckNewFunctionality"
+            "Alias": "IssuesRetest"
           },
           "Children": {
             "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
@@ -140,17 +119,38 @@
             "Type": "RoleConfiguration",
             "Alias": "QALeads"
           },
-          "Name": "Builds",
+          "Name": "Regression Testing",
           "Target": {
             "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
             "Type": "RecordTemplate",
-            "Alias": "Builds"
+            "Alias": "RegressionTesting"
           },
           "Children": {
             "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
             "$values": []
           },
-          "TargetType": "RecordTemplate",
+          "TargetType": "ProcessTemplate",
+          "Privileges": "Read, Create, Update, Delete, Execute, FullAccess",
+          "AvailablePrivileges": "ContextUserExpression, ContextObjectCondition, Read, Create, Update, Delete, FullAccess"
+        },
+        {
+          "$type": "Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts",
+          "Role": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "RoleConfiguration",
+            "Alias": "QALeads"
+          },
+          "Name": "Sanity Testing",
+          "Target": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "RecordTemplate",
+            "Alias": "SanityTesting"
+          },
+          "Children": {
+            "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
+            "$values": []
+          },
+          "TargetType": "ProcessTemplate",
           "Privileges": "Read, Create, Update, Delete, Execute, FullAccess",
           "AvailablePrivileges": "ContextUserExpression, ContextObjectCondition, Read, Create, Update, Delete, FullAccess"
         }

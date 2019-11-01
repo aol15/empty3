@@ -18,12 +18,12 @@
       "Type": "RoleConfiguration",
       "Alias": "assignments_workers"
     },
-    "Name": "System business app",
+    "Name": "bp3",
     "Description": "BusinessApp",
     "Target": {
       "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
       "Type": "Solution",
-      "Alias": "systemSolution"
+      "Alias": "bp3"
     },
     "Children": {
       "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
@@ -51,20 +51,20 @@
                   "Type": "RoleConfiguration",
                   "Alias": "assignments_workers"
                 },
-                "Name": "Создание",
+                "Name": "Create",
                 "Target": {
                   "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
-                  "Type": "Form",
+                  "Type": "UserCommand",
                   "Owner": "Assignment",
-                  "Alias": "caseForm"
+                  "Alias": "create"
                 },
                 "Children": {
                   "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
                   "$values": []
                 },
-                "TargetType": "Form",
-                "Privileges": "Read",
-                "AvailablePrivileges": "Read"
+                "TargetType": "Operation",
+                "Privileges": "Execute",
+                "AvailablePrivileges": "Execute"
               },
               {
                 "$type": "Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts",
@@ -95,20 +95,20 @@
                   "Type": "RoleConfiguration",
                   "Alias": "assignments_workers"
                 },
-                "Name": "Create",
+                "Name": "Создание",
                 "Target": {
                   "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
-                  "Type": "UserCommand",
+                  "Type": "Form",
                   "Owner": "Assignment",
-                  "Alias": "create"
+                  "Alias": "caseForm"
                 },
                 "Children": {
                   "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
                   "$values": []
                 },
-                "TargetType": "Operation",
-                "Privileges": "Execute",
-                "AvailablePrivileges": "Execute"
+                "TargetType": "Form",
+                "Privileges": "Read",
+                "AvailablePrivileges": "Read"
               }
             ]
           },

@@ -1,10 +1,10 @@
 {
   "$type": "Comindware.Platform.Contracts.RoleConfigurationModel, Comindware.Platform.Contracts",
-  "Name": "Управление подписками клиентов",
+  "Name": "Analysts",
   "GlobalAlias": {
     "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
     "Type": "RoleConfiguration",
-    "Alias": "subscription"
+    "Alias": "Analysts"
   },
   "IsActive": true,
   "Members": {
@@ -16,14 +16,14 @@
     "Role": {
       "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
       "Type": "RoleConfiguration",
-      "Alias": "subscription"
+      "Alias": "Analysts"
     },
-    "Name": "System business app",
+    "Name": "bp3",
     "Description": "System business application",
     "Target": {
       "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
       "Type": "Solution",
-      "Alias": "systemSolution"
+      "Alias": "bp3"
     },
     "Children": {
       "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
@@ -33,20 +33,20 @@
           "Role": {
             "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
             "Type": "RoleConfiguration",
-            "Alias": "subscription"
+            "Alias": "Analysts"
           },
-          "Name": "Уведомление о продлениях",
+          "Name": "Project Plans",
           "Target": {
             "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
             "Type": "RecordTemplate",
-            "Alias": "Uvedomlenieoprodleniyakh"
+            "Alias": "ProjectPlans"
           },
           "Children": {
             "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
             "$values": []
           },
-          "TargetType": "ProcessTemplate",
-          "Privileges": "Read, Create, Update, Delete, Execute, FullAccess",
+          "TargetType": "RecordTemplate",
+          "Privileges": "Undefined",
           "AvailablePrivileges": "ContextUserExpression, ContextObjectCondition, Read, Create, Update, Delete, FullAccess"
         },
         {
@@ -54,26 +54,26 @@
           "Role": {
             "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
             "Type": "RoleConfiguration",
-            "Alias": "subscription"
+            "Alias": "Analysts"
           },
-          "Name": "Процесс продления подписки",
+          "Name": "Проекты",
           "Target": {
             "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
             "Type": "RecordTemplate",
-            "Alias": "Protsessprodleniyapodpiski"
+            "Alias": "Project"
           },
           "Children": {
             "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
             "$values": []
           },
-          "TargetType": "ProcessTemplate",
-          "Privileges": "Read, Create, Update, Delete, Execute, FullAccess",
+          "TargetType": "RecordTemplate",
+          "Privileges": "Read, Create, Execute",
           "AvailablePrivileges": "ContextUserExpression, ContextObjectCondition, Read, Create, Update, Delete, FullAccess"
         }
       ]
     },
     "TargetType": "BusinessApp",
-    "Privileges": "Execute",
+    "Privileges": "Read, Create, Update, Delete, FullAccess",
     "AvailablePrivileges": "Read, Create, Update, Delete, FullAccess"
   }
 }
