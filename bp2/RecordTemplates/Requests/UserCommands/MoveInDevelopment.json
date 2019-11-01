@@ -1,0 +1,40 @@
+{
+  "$type": "Comindware.Platform.Contracts.UserCommandConfigurationModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "UserCommand",
+    "Owner": "Requests",
+    "Alias": "MoveInDevelopment"
+  },
+  "Name": "В разработку",
+  "IsSystem": false,
+  "IsDisabled": false,
+  "IsPrepare": false,
+  "SkipValidation": false,
+  "Context": "Record",
+  "Multiplicity": "OneByOne",
+  "Kind": "Script",
+  "ResultType": "DataChange",
+  "ScriptRule": {
+    "$type": "Comindware.Platform.Contracts.UserCommandScriptRuleModel, Comindware.Platform.Contracts",
+    "Type": "UserCommandScript",
+    "Definition": {
+      "$type": "Comindware.Platform.Contracts.CSharpRuleDefinitionModel, Comindware.Platform.Contracts",
+      "EntryPoint": "Script",
+      "References": {
+        "$type": "System.String[], mscorlib",
+        "$values": [
+          null
+        ]
+      },
+      "Code": "using System;\nusing System.Collections.Generic;\nusing System.Linq;\nusing Comindware.Data.Entity;\nusing Comindware.TeamNetwork.Api.Data.UserCommands;\n\npublic class Script\n{\n    public static UserCommandResult Main(UserCommandContext userCommandContext, Comindware.Entities entities)\n    {\n        var statusId = entities.RequestStatus.Where(x => x.statusCode == \"inDevelopment\").Select(x => x.id).FirstOrDefault();\n        var currentObjectid = userCommandContext.ObjectIds[0];\n\n        var newStatusData = new Dictionary<string,object>()\n        {\n            {\"requestStatus\", statusId}\n        };\n        \n        Api.TeamNetwork.ObjectService.EditWithAlias(\"Requests\", currentObjectid, newStatusData);\n\n        //пересчет прав\n        var IssuesRecordType = Api.TeamNetwork.ObjectAppService.GetByAlias(\"Issue\");\n    \n        var relatedIssues = entities.Issues_Requests.Where(x => x.Request == currentObjectid).Select(x => x.Issue).ToList();\n\t\t\n        if(relatedIssues.Count > 0)\n        {\n            Api.TeamNetwork.ObjectAppService.UpdateObjectsAccess(IssuesRecordType.Id, relatedIssues.ToArray() );\n        }\n        \n        var result = new UserCommandResult\n        {\n            Success = true,\n            Commited = true,\n            ResultType = UserCommandResultType.DataChange,\n            Messages = new[]\n            {\n                new UserCommandMessage\n                {\n                    Severity = SeverityLevel.Normal,\n                    Text = \"Статус успешно изменен\"\n                }\n            }\n        };\n\n        return result;\n    }\n}",
+      "Type": "CSharpExpression"
+    }
+  },
+  "RelatedEntityGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "LockStateChangeType": "Undefined",
+  "LockStateVisibilityType": "Undefined"
+}

@@ -1,0 +1,392 @@
+{
+  "$type": "Comindware.Platform.Contracts.RoleWorkspaceConfigurationModel, Comindware.Platform.Contracts",
+  "Name": "Developers",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "RoleWorkspace",
+    "Alias": "Developers"
+  },
+  "Description": "Default Navigation Profile",
+  "NavigationItems": {
+    "$type": "Comindware.Platform.Contracts.NavigationItemModel[], Comindware.Platform.Contracts",
+    "$values": [
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Статус",
+        "Description": "Dashboard",
+        "Container": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Priority": 10,
+        "ItemType": "DashboardPage",
+        "NavigationType": "SystemNavigation",
+        "ContainerType": "DashboardPage",
+        "IconClass": "chart-pie",
+        "Target": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Expression Sample",
+        "Container": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Priority": 9,
+        "ItemType": "RecordTemplate",
+        "NavigationType": "SystemNavigation",
+        "ContainerType": "RecordTemplate",
+        "IconClass": "code",
+        "Target": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "RecordTemplate",
+          "Alias": "ExpressionSample"
+        },
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Разделитель",
+        "Container": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Priority": 8,
+        "ItemType": "Splitter",
+        "NavigationType": "SystemNavigation",
+        "ContainerType": "Splitter",
+        "Target": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Мои задачи",
+        "Container": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "RecordTemplate",
+          "Alias": "Issue"
+        },
+        "Priority": 7,
+        "ItemType": "List",
+        "NavigationType": "SystemNavigation",
+        "ContainerType": "RecordTemplate",
+        "IconClass": "star-exclamation",
+        "Target": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Dataset",
+          "Owner": "Issue",
+          "Alias": "MyTasks"
+        },
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Разделитель",
+        "Container": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Priority": 6,
+        "ItemType": "Splitter",
+        "NavigationType": "SystemNavigation",
+        "ContainerType": "Splitter",
+        "Target": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Разработка",
+        "Container": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Priority": 5,
+        "ItemType": "Group",
+        "NavigationType": "SystemNavigation",
+        "ContainerType": "Group",
+        "IconClass": "bicycle",
+        "Target": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Severity": "None",
+        "ChildrenItems": {
+          "$type": "Comindware.Platform.Contracts.NavigationItemModel[], Comindware.Platform.Contracts",
+          "$values": [
+            {
+              "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+              "Name": "Активные задачи",
+              "Container": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "RecordTemplate",
+                "Alias": "Issue"
+              },
+              "Priority": 7,
+              "ItemType": "List",
+              "NavigationType": "SystemNavigation",
+              "ContainerType": "RecordTemplate",
+              "IconClass": "person-sign",
+              "Target": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "Dataset",
+                "Owner": "Issue",
+                "Alias": "ActiveTasks"
+              },
+              "Severity": "None"
+            },
+            {
+              "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+              "Name": "Срочные задачи",
+              "Container": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "RecordTemplate",
+                "Alias": "Issue"
+              },
+              "Priority": 6,
+              "ItemType": "List",
+              "NavigationType": "SystemNavigation",
+              "ContainerType": "RecordTemplate",
+              "IconClass": "tachometer-alt-fastest",
+              "Target": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "Dataset",
+                "Owner": "Issue",
+                "Alias": "FastIssues"
+              },
+              "Severity": "None"
+            },
+            {
+              "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+              "Name": "Ошибки",
+              "Container": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "RecordTemplate",
+                "Alias": "Issue"
+              },
+              "Priority": 5,
+              "ItemType": "List",
+              "NavigationType": "SystemNavigation",
+              "ContainerType": "RecordTemplate",
+              "IconClass": "bug",
+              "Target": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "Dataset",
+                "Owner": "Issue",
+                "Alias": "inWorkBugs"
+              },
+              "Severity": "None"
+            },
+            {
+              "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+              "Name": "Локализация",
+              "Container": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "RecordTemplate",
+                "Alias": "Issue"
+              },
+              "Priority": 4,
+              "ItemType": "List",
+              "NavigationType": "SystemNavigation",
+              "ContainerType": "RecordTemplate",
+              "IconClass": "language",
+              "Target": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "Dataset",
+                "Owner": "Issue",
+                "Alias": "Localization"
+              },
+              "Severity": "None"
+            },
+            {
+              "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+              "Name": "Юзабилити",
+              "Container": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "RecordTemplate",
+                "Alias": "Issue"
+              },
+              "Priority": 3,
+              "ItemType": "List",
+              "NavigationType": "SystemNavigation",
+              "ContainerType": "RecordTemplate",
+              "IconClass": "smile-beam",
+              "Target": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "Dataset",
+                "Owner": "Issue",
+                "Alias": "CurrentUsability"
+              },
+              "Severity": "None"
+            },
+            {
+              "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+              "Name": "Улучшения",
+              "Container": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "RecordTemplate",
+                "Alias": "Issue"
+              },
+              "Priority": 2,
+              "ItemType": "List",
+              "NavigationType": "SystemNavigation",
+              "ContainerType": "RecordTemplate",
+              "IconClass": "dove",
+              "Target": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "Dataset",
+                "Owner": "Issue",
+                "Alias": "CurrentEnhancements"
+              },
+              "Severity": "None"
+            },
+            {
+              "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+              "Name": "Все задачи",
+              "Container": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "RecordTemplate",
+                "Alias": "Issue"
+              },
+              "Priority": 1,
+              "ItemType": "List",
+              "NavigationType": "SystemNavigation",
+              "ContainerType": "RecordTemplate",
+              "IconClass": "list-alt",
+              "Target": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "Dataset",
+                "Owner": "Issue",
+                "Alias": "list1"
+              },
+              "Severity": "None"
+            }
+          ]
+        }
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Разделитель",
+        "Container": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Priority": 4,
+        "ItemType": "Splitter",
+        "NavigationType": "SystemNavigation",
+        "ContainerType": "Splitter",
+        "Target": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Планирование",
+        "Container": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Priority": 3,
+        "ItemType": "Group",
+        "NavigationType": "SystemNavigation",
+        "ContainerType": "Group",
+        "IconClass": "chart-line",
+        "Target": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Severity": "None",
+        "ChildrenItems": {
+          "$type": "Comindware.Platform.Contracts.NavigationItemModel[], Comindware.Platform.Contracts",
+          "$values": [
+            {
+              "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+              "Name": "Спринты",
+              "Container": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "Undefined"
+              },
+              "Priority": 2,
+              "ItemType": "RecordTemplate",
+              "NavigationType": "SystemNavigation",
+              "ContainerType": "RecordTemplate",
+              "IconClass": "sync-alt",
+              "Target": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "RecordTemplate",
+                "Alias": "Sprint"
+              },
+              "Severity": "None"
+            },
+            {
+              "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+              "Name": "Эпики",
+              "Container": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "Undefined"
+              },
+              "Priority": 1,
+              "ItemType": "RecordTemplate",
+              "NavigationType": "SystemNavigation",
+              "ContainerType": "RecordTemplate",
+              "IconClass": "gift",
+              "Target": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "RecordTemplate",
+                "Alias": "Story"
+              },
+              "Severity": "None"
+            }
+          ]
+        }
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Разделитель",
+        "Container": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Priority": 2,
+        "ItemType": "Splitter",
+        "NavigationType": "SystemNavigation",
+        "ContainerType": "Splitter",
+        "Target": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Согласование отпусков",
+        "Container": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Priority": 1,
+        "ItemType": "RecordTemplate",
+        "NavigationType": "SystemNavigation",
+        "ContainerType": "RecordTemplate",
+        "IconClass": "island-tropical",
+        "Target": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "RecordTemplate",
+          "Alias": "approvingVacation"
+        },
+        "Severity": "None"
+      }
+    ]
+  }
+}

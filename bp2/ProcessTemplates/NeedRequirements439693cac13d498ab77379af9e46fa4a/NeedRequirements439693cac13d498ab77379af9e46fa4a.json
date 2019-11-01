@@ -1,0 +1,15 @@
+{
+  "$type": "Comindware.Platform.Contracts.TemplateInfoModel, Comindware.Platform.Contracts",
+  "Name": "Need Requirements",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "ProcessTemplate",
+    "Alias": "NeedRequirements439693cac13d498ab77379af9e46fa4a"
+  },
+  "IsDisabled": false,
+  "RelatedTemplate": {
+    "$type": "System.Nullable`1[[Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts]], mscorlib",
+    "Type": "RecordTemplate",
+    "Alias": "NeedRequirements"
+  }
+}

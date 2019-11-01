@@ -1,0 +1,48 @@
+{
+  "$type": "Comindware.Platform.Contracts.UserCommandConfigurationModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "UserCommand",
+    "Owner": "buildsPlan",
+    "Alias": "Peredatbild"
+  },
+  "Name": "Передать билд",
+  "IsSystem": false,
+  "IsDisabled": false,
+  "IsPrepare": false,
+  "SkipValidation": false,
+  "Context": "Record",
+  "Multiplicity": "OneByOne",
+  "Kind": "Script",
+  "ResultType": "DataChange",
+  "ConfirmationModelConfiguration": {
+    "$type": "Comindware.Platform.Contracts.UserCommandConfirmationModel, Comindware.Platform.Contracts",
+    "Title": "Новая операция",
+    "Text": "Подтвердить выполнение операции",
+    "YesButtonText": "Выполнить",
+    "NoButtonText": "Отмена",
+    "Severity": "None"
+  },
+  "ScriptRule": {
+    "$type": "Comindware.Platform.Contracts.UserCommandScriptRuleModel, Comindware.Platform.Contracts",
+    "Type": "UserCommandScript",
+    "Definition": {
+      "$type": "Comindware.Platform.Contracts.CSharpRuleDefinitionModel, Comindware.Platform.Contracts",
+      "EntryPoint": "Script",
+      "References": {
+        "$type": "System.String[], mscorlib",
+        "$values": [
+          null
+        ]
+      },
+      "Code": "using System; \r\nusing System.Collections.Generic;\r\nusing System.Linq;\r\nusing Comindware.Data.Entity;\r\nusing Comindware.TeamNetwork.Api.Data.UserCommands;\r\nusing Comindware.TeamNetwork.Api.Data;\r\nusing Comindware.Solution.Api.Data;\r\n\r\nclass Script\r\n{\r\n    public static UserCommandResult Main(UserCommandContext userCommandContext, Comindware.Entities entities)\r\n    {\r\n        \r\n\t\tvar buildsPlan = Api.TeamNetwork.ObjectService.GetWithAlias(\"buildsPlan\", userCommandContext.ObjectIds[0]);\r\n\t\t\r\n\t\tif (!buildsPlan.ContainsKey(\"buildNumber\")||!buildsPlan.ContainsKey(\"sendBuildDate\"))\r\n\t\t{\r\n\t\t\tvar resultf = new UserCommandResult\r\n\t\t\t{\r\n\t\t\t\tSuccess = false,\r\n\t\t\t\tCommited = false,\r\n\t\t\t\tResultType = UserCommandResultType.Notificate,\r\n\t\t\t\tMessages = new[]\r\n\t\t\t\t{\r\n\t\t\t\t\tnew UserCommandMessage\r\n\t\t\t\t\t{\r\n\t\t\t\t\t\tSeverity = SeverityLevel.Normal,\r\n\t\t\t\t\t\tText = \"Для выполнения операции передачи билда необходимо заполнить номер и дату передачи билда\"\r\n\t\t\t\t\t}\r\n\r\n\t\t\t\t}\r\n\t\t\t};\r\n\r\n\t\t\treturn resultf;\r\n\t\t}\t\r\n\t\t\r\n\t\tvar buildStatusDone = new object();\r\n\t\tvar buildStatuses = Api.TeamNetwork.ObjectService.ListWithAlias(\"buildStatuses\");\r\n\t\tforeach (var status in buildStatuses)\r\n\t\t\tif (status[\"code\"].ToString().Equals(\"03\"))\r\n\t\t\t\tbuildStatusDone = status[\"id\"];\r\n\r\n\t\tvar ussueStatusDone = new object();\r\n        var ussueStatusVerified = new object();\r\n\t\tvar issueStatuses = Api.TeamNetwork.ObjectService.ListWithAlias(\"IssueStatus\");\r\n\t\tforeach (var status in issueStatuses)\r\n        {\r\n\t\t\tif (status[\"code\"].ToString().Equals(\"closed\"))\r\n            {\r\n                ussueStatusDone = status[\"id\"];\r\n            }\r\n            if (status[\"code\"].ToString().Equals(\"verified\"))\r\n            {\r\n\t\t\t\tussueStatusVerified = status[\"id\"];\r\n            }\r\n        }\r\n\t\tList<object> posponeIssues = new List<object>();\r\n\t\t// переведем все неисполненные задачи\r\n\t\t\r\n\t\tif (buildsPlan.ContainsKey(\"issues\"))\r\n\t\t\tforeach (var issue in (buildsPlan[\"issues\"] as IEnumerable<object>))\r\n\t\t\t{\r\n\t\t\t\tvar issueInfo = Api.TeamNetwork.ObjectService.GetWithAlias(\"Issue\", issue.ToString());\r\n/* var resulttest = new UserCommandResult\r\n{Success = false,Commited = false,ResultType = UserCommandResultType.Notificate,Messages = new[]\r\n\t{new UserCommandMessage{Severity = SeverityLevel.Critical,Text = ussueStatusDone.ToString()}}\r\n};\r\nreturn resulttest; */\r\n\t\t\t\tif (issueInfo.ContainsKey(\"Status\")\r\n                    ? issueInfo[\"Status\"].ToString() != ussueStatusDone.ToString()\r\n                      && issueInfo[\"Status\"].ToString() != ussueStatusVerified.ToString()\r\n                    : false)\r\n\t\t\t\t\tposponeIssues.Add (issueInfo[\"id\"]);\r\n\t\t\t}\r\n\t\t\r\n\t\tif (buildsPlan.ContainsKey(\"posponeIssues\"))\r\n\t\t\tposponeIssues.AddRange(buildsPlan[\"posponeIssues\"] as IEnumerable<object>);\r\n\t\t\r\n\t\tvar d = new Dictionary<string,object>{\r\n\t\t\t{\"status\", buildStatusDone},\r\n\t\t\t{\"posponeIssues\", posponeIssues},\r\n\t\t};\r\n\t\t\r\n\t\tApi.TeamNetwork.ObjectService.EditWithAlias(\"buildsPlan\", userCommandContext.ObjectIds[0], d);\r\n\t\t\r\n/* var resulttest = new UserCommandResult\r\n{Success = false,Commited = false,ResultType = UserCommandResultType.Notificate,Messages = new[]\r\n\t{new UserCommandMessage{Severity = SeverityLevel.Critical,Text = \"ok\"}}\r\n};\r\nreturn resulttest; */\t\t\r\n\r\n\t\tvar result = new UserCommandResult\r\n\t\t{\r\n\t\t\tSuccess = true,\r\n\t\t\tCommited = true,\r\n\t\t\tResultType = UserCommandResultType.DataChange,\r\n\t\t\tMessages = new[]\r\n\t\t\t{\r\n\t\t\t\tnew UserCommandMessage\r\n\t\t\t\t{\r\n\t\t\t\t\tSeverity = SeverityLevel.Normal,\r\n\t\t\t\t\tText = \"План успешно завершен\"\r\n\t\t\t\t}\r\n\r\n\t\t\t}\r\n\t\t};\r\n\r\n\t\treturn result;\r\n    }\r\n}",
+      "Type": "CSharpExpression"
+    }
+  },
+  "RelatedEntityGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "LockStateChangeType": "Undefined",
+  "LockStateVisibilityType": "Undefined"
+}

@@ -1,0 +1,78 @@
+{
+  "$type": "Comindware.Platform.Contracts.ToolbarModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Toolbar",
+    "Owner": "Obrascheniya1obrabotkaobrascheniy",
+    "Alias": "processtoolbar"
+  },
+  "Name": "Панель для экземпляров процессов",
+  "IsDefaultForLists": false,
+  "IsDefaultForForms": false,
+  "IsDefaultForProcess": false,
+  "Items": {
+    "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ToolbarItemModel, Comindware.Platform.Contracts]], mscorlib",
+    "$values": [
+      {
+        "$type": "Comindware.Platform.Contracts.ToolbarItemModel, Comindware.Platform.Contracts",
+        "UserCommandGlobalAlias": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "UserCommand",
+          "Owner": "Obrascheniya1obrabotkaobrascheniy",
+          "Alias": "Ostanovitprotsess"
+        },
+        "Name": "Остановить процесс",
+        "Order": 0,
+        "Type": "Action",
+        "IconType": "Undefined",
+        "IconClass": "hand-pointer",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.ToolbarItemModel, Comindware.Platform.Contracts",
+        "UserCommandGlobalAlias": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "UserCommand",
+          "Owner": "Obrascheniya1obrabotkaobrascheniy",
+          "Alias": "createProcess"
+        },
+        "Name": "Создать",
+        "Order": 1,
+        "Type": "Action",
+        "IconType": "Undefined",
+        "IconClass": "hand-pointer",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.ToolbarItemModel, Comindware.Platform.Contracts",
+        "UserCommandGlobalAlias": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "UserCommand",
+          "Owner": "Obrascheniya1obrabotkaobrascheniy",
+          "Alias": "completeTask"
+        },
+        "Name": "Завершить задачу",
+        "Order": 2,
+        "Type": "Action",
+        "IconType": "Undefined",
+        "IconClass": "hand-pointer",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.ToolbarItemModel, Comindware.Platform.Contracts",
+        "UserCommandGlobalAlias": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "UserCommand",
+          "Owner": "Obrascheniya1obrabotkaobrascheniy",
+          "Alias": "editTask"
+        },
+        "Name": "Сохранить",
+        "Order": 3,
+        "Type": "Action",
+        "IconType": "Undefined",
+        "IconClass": "hand-pointer",
+        "Severity": "None"
+      }
+    ]
+  }
+}

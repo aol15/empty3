@@ -1,0 +1,19 @@
+{
+  "$type": "Comindware.Platform.Contracts.GlobalFunctionModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "GlobalFunction",
+    "Alias": "t2"
+  },
+  "Name": "t2",
+  "InputMessageTypeGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "MessageTemplate",
+    "Alias": "_Empty"
+  },
+  "ReturnMessageTypeGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "MessageTemplate",
+    "Alias": "_Empty"
+  }
+}

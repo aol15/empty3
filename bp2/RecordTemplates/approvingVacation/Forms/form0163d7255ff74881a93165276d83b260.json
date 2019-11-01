@@ -1,0 +1,11 @@
+{
+  "$type": "Comindware.Platform.Contracts.FormModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Form",
+    "Owner": "approvingVacation",
+    "Alias": "form0163d7255ff74881a93165276d83b260"
+  },
+  "IsDefault": false,
+  "Origination": "Undefined"
+}

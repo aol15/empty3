@@ -1,0 +1,125 @@
+{
+  "$type": "Comindware.Platform.Contracts.RoleConfigurationModel, Comindware.Platform.Contracts",
+  "Name": "Работа с поручениями",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "RoleConfiguration",
+    "Alias": "assignments_workers"
+  },
+  "IsActive": true,
+  "Members": {
+    "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts]], mscorlib",
+    "$values": []
+  },
+  "RootResource": {
+    "$type": "Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts",
+    "Role": {
+      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+      "Type": "RoleConfiguration",
+      "Alias": "assignments_workers"
+    },
+    "Name": "bp2",
+    "Description": "BusinessApp",
+    "Target": {
+      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+      "Type": "Solution",
+      "Alias": "bp2"
+    },
+    "Children": {
+      "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
+      "$values": [
+        {
+          "$type": "Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts",
+          "Role": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "RoleConfiguration",
+            "Alias": "assignments_workers"
+          },
+          "Name": "Поручения",
+          "Target": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "RecordTemplate",
+            "Alias": "Assignment"
+          },
+          "Children": {
+            "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
+            "$values": [
+              {
+                "$type": "Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts",
+                "Role": {
+                  "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                  "Type": "RoleConfiguration",
+                  "Alias": "assignments_workers"
+                },
+                "Name": "Create",
+                "Target": {
+                  "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                  "Type": "UserCommand",
+                  "Owner": "Assignment",
+                  "Alias": "create"
+                },
+                "Children": {
+                  "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
+                  "$values": []
+                },
+                "TargetType": "Operation",
+                "Privileges": "Execute",
+                "AvailablePrivileges": "Execute"
+              },
+              {
+                "$type": "Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts",
+                "Role": {
+                  "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                  "Type": "RoleConfiguration",
+                  "Alias": "assignments_workers"
+                },
+                "Name": "Save",
+                "Target": {
+                  "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                  "Type": "UserCommand",
+                  "Owner": "Assignment",
+                  "Alias": "edit"
+                },
+                "Children": {
+                  "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
+                  "$values": []
+                },
+                "TargetType": "Operation",
+                "Privileges": "Execute",
+                "AvailablePrivileges": "Execute"
+              },
+              {
+                "$type": "Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts",
+                "Role": {
+                  "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                  "Type": "RoleConfiguration",
+                  "Alias": "assignments_workers"
+                },
+                "Name": "Создание",
+                "Target": {
+                  "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                  "Type": "Form",
+                  "Owner": "Assignment",
+                  "Alias": "caseForm"
+                },
+                "Children": {
+                  "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
+                  "$values": []
+                },
+                "TargetType": "Form",
+                "Privileges": "Read",
+                "AvailablePrivileges": "Read"
+              }
+            ]
+          },
+          "TargetType": "RecordTemplate",
+          "Privileges": "Read, Create, Update",
+          "AvailablePrivileges": "ContextUserExpression, ContextObjectCondition, Read, Create, Update, Delete, FullAccess"
+        }
+      ]
+    },
+    "TargetType": "BusinessApp",
+    "Privileges": "Undefined",
+    "AvailablePrivileges": "Read, Create, Update, Delete, FullAccess"
+  }
+}

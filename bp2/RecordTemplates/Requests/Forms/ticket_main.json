@@ -1,0 +1,143 @@
+{
+  "$type": "Comindware.Platform.Contracts.FormModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Form",
+    "Owner": "Requests",
+    "Alias": "ticket_main"
+  },
+  "IsDefault": true,
+  "Root": {
+    "$type": "Comindware.Platform.Contracts.VerticalLayoutModel, Comindware.Platform.Contracts",
+    "Rows": {
+      "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.FormComponentModel, Comindware.Platform.Contracts]], mscorlib",
+      "$values": [
+        {
+          "$type": "Comindware.Platform.Contracts.SubFormModel, Comindware.Platform.Contracts",
+          "Name": "Информация по обращению",
+          "DataSourcePropertyPath": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+            "$values": [
+              {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "Form",
+                "Owner": "Requests",
+                "Alias": "request_info"
+              }
+            ]
+          },
+          "GlobalAlias": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "FormComponent",
+            "Alias": "Informatsiyapoobrascheniyu"
+          },
+          "AccessType": "Editable",
+          "Width": 0,
+          "Type": "SubForm"
+        },
+        {
+          "$type": "Comindware.Platform.Contracts.SubFormModel, Comindware.Platform.Contracts",
+          "Name": "Описание проблемы",
+          "DataSourcePropertyPath": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+            "$values": [
+              {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "Form",
+                "Owner": "Requests",
+                "Alias": "request_problem_description"
+              }
+            ]
+          },
+          "GlobalAlias": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "FormComponent",
+            "Alias": "Opisanieproblemy"
+          },
+          "AccessType": "Editable",
+          "Width": 0,
+          "Type": "SubForm"
+        },
+        {
+          "$type": "Comindware.Platform.Contracts.SubFormModel, Comindware.Platform.Contracts",
+          "Name": "Переписка и доработки",
+          "DataSourcePropertyPath": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+            "$values": [
+              {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "Form",
+                "Owner": "Requests",
+                "Alias": "FormNested"
+              }
+            ]
+          },
+          "GlobalAlias": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "FormComponent",
+            "Alias": "Svyazannyeobekty"
+          },
+          "AccessType": "Editable",
+          "Width": 0,
+          "Type": "SubForm"
+        },
+        {
+          "$type": "Comindware.Platform.Contracts.SubFormModel, Comindware.Platform.Contracts",
+          "Name": "Контакты",
+          "DataSourcePropertyPath": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+            "$values": [
+              {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "Form",
+                "Owner": "Requests",
+                "Alias": "contacts"
+              }
+            ]
+          },
+          "GlobalAlias": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "FormComponent",
+            "Alias": "Kontakty"
+          },
+          "AccessType": "Hidden",
+          "Width": 0,
+          "Type": "SubForm"
+        },
+        {
+          "$type": "Comindware.Platform.Contracts.SubFormModel, Comindware.Platform.Contracts",
+          "Name": "Метрики",
+          "DataSourcePropertyPath": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias[], Comindware.Platform.Contracts",
+            "$values": [
+              {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "Form",
+                "Owner": "Requests",
+                "Alias": "request_metrics_all67585657"
+              }
+            ]
+          },
+          "GlobalAlias": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "FormComponent",
+            "Alias": "Metriki"
+          },
+          "AccessType": "Hidden",
+          "Width": 0,
+          "Type": "SubForm"
+        }
+      ]
+    },
+    "GlobalAlias": {
+      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+      "Type": "FormComponent",
+      "Alias": "root"
+    },
+    "AccessType": "Undefined",
+    "Width": 0,
+    "Type": "VerticalLayout"
+  },
+  "Name": "Обращения - основная",
+  "Origination": "Undefined"
+}

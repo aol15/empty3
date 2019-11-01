@@ -1,0 +1,309 @@
+{
+  "$type": "Comindware.Platform.Contracts.RoleWorkspaceConfigurationModel, Comindware.Platform.Contracts",
+  "Name": "Продажи и проекты",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "RoleWorkspace",
+    "Alias": "workspace2"
+  },
+  "NavigationItems": {
+    "$type": "Comindware.Platform.Contracts.NavigationItemModel[], Comindware.Platform.Contracts",
+    "$values": [
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Клиенты",
+        "Container": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Priority": 14,
+        "ItemType": "RecordTemplate",
+        "NavigationType": "SystemNavigation",
+        "ContainerType": "RecordTemplate",
+        "IconClass": "building",
+        "Target": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "RecordTemplate",
+          "Alias": "Customer"
+        },
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Разделитель",
+        "Container": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Priority": 13,
+        "ItemType": "Splitter",
+        "NavigationType": "SystemNavigation",
+        "ContainerType": "Splitter",
+        "Target": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Контакты клиентов",
+        "Container": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Priority": 12,
+        "ItemType": "RecordTemplate",
+        "NavigationType": "SystemNavigation",
+        "ContainerType": "RecordTemplate",
+        "IconClass": "users-crown",
+        "Target": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "RecordTemplate",
+          "Alias": "customers_contacts"
+        },
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Разделитель",
+        "Container": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Priority": 11,
+        "ItemType": "Splitter",
+        "NavigationType": "SystemNavigation",
+        "ContainerType": "Splitter",
+        "Target": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Договоры",
+        "Container": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Priority": 10,
+        "ItemType": "RecordTemplate",
+        "NavigationType": "SystemNavigation",
+        "ContainerType": "RecordTemplate",
+        "IconClass": "file-alt",
+        "Target": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "RecordTemplate",
+          "Alias": "Contract"
+        },
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Разделитель",
+        "Container": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Priority": 9,
+        "ItemType": "Splitter",
+        "NavigationType": "SystemNavigation",
+        "ContainerType": "Splitter",
+        "Target": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Проекты",
+        "Container": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Priority": 8,
+        "ItemType": "RecordTemplate",
+        "NavigationType": "SystemNavigation",
+        "ContainerType": "RecordTemplate",
+        "IconClass": "project-diagram",
+        "Target": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "RecordTemplate",
+          "Alias": "Project"
+        },
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Разделитель",
+        "Container": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Priority": 7,
+        "ItemType": "Splitter",
+        "NavigationType": "SystemNavigation",
+        "ContainerType": "Splitter",
+        "Target": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Планы проектов",
+        "Container": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Priority": 6,
+        "ItemType": "RecordTemplate",
+        "NavigationType": "SystemNavigation",
+        "ContainerType": "RecordTemplate",
+        "IconClass": "list-alt",
+        "Target": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "RecordTemplate",
+          "Alias": "ProjectPlans"
+        },
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Разделитель",
+        "Container": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Priority": 5,
+        "ItemType": "Splitter",
+        "NavigationType": "SystemNavigation",
+        "ContainerType": "Splitter",
+        "Target": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Задачи по проектам",
+        "Description": "Issue",
+        "Container": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Priority": 4,
+        "ItemType": "RecordTemplate",
+        "NavigationType": "SystemNavigation",
+        "ContainerType": "RecordTemplate",
+        "IconClass": "list-alt",
+        "Target": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "RecordTemplate",
+          "Alias": "Issue"
+        },
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Разделитель",
+        "Container": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Priority": 3,
+        "ItemType": "Splitter",
+        "NavigationType": "SystemNavigation",
+        "ContainerType": "Splitter",
+        "Target": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Справочники",
+        "Container": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Priority": 2,
+        "ItemType": "Group",
+        "NavigationType": "SystemNavigation",
+        "ContainerType": "Group",
+        "IconClass": "clone",
+        "Target": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Severity": "None",
+        "ChildrenItems": {
+          "$type": "Comindware.Platform.Contracts.NavigationItemModel[], Comindware.Platform.Contracts",
+          "$values": [
+            {
+              "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+              "Name": "Статусы проекта",
+              "Container": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "Undefined"
+              },
+              "Priority": 2,
+              "ItemType": "RecordTemplate",
+              "NavigationType": "SystemNavigation",
+              "ContainerType": "RecordTemplate",
+              "IconClass": "list-alt",
+              "Target": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "RecordTemplate",
+                "Alias": "Statusyproekta"
+              },
+              "Severity": "None"
+            },
+            {
+              "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+              "Name": "Тип договора",
+              "Container": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "Undefined"
+              },
+              "Priority": 1,
+              "ItemType": "RecordTemplate",
+              "NavigationType": "SystemNavigation",
+              "ContainerType": "RecordTemplate",
+              "IconClass": "list-alt",
+              "Target": {
+                "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+                "Type": "RecordTemplate",
+                "Alias": "Tipdogovora"
+              },
+              "Severity": "None"
+            }
+          ]
+        }
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.NavigationItemModel, Comindware.Platform.Contracts",
+        "Name": "Разделитель",
+        "Container": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Priority": 1,
+        "ItemType": "Splitter",
+        "NavigationType": "SystemNavigation",
+        "ContainerType": "Splitter",
+        "Target": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Severity": "None"
+      }
+    ]
+  }
+}

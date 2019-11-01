@@ -1,0 +1,11 @@
+{
+  "$type": "Comindware.Platform.Contracts.TemplateInfoModel, Comindware.Platform.Contracts",
+  "Name": "Сценарии тестрирования",
+  "Description": "Последовательность зависимых тест-кейсов",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "RecordTemplate",
+    "Alias": "TestScenario"
+  },
+  "IsDisabled": false
+}

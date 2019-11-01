@@ -1,0 +1,29 @@
+{
+  "$type": "Comindware.Platform.Contracts.AttributeModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Attribute",
+    "Owner": "Poiskiprodleniy",
+    "Alias": "Naydennyeprodleniya"
+  },
+  "Type": "Instance",
+  "Format": "Undefined",
+  "Name": "Найденные продления",
+  "IsSystem": false,
+  "IsDisabled": true,
+  "IsUnique": false,
+  "IsIndexed": false,
+  "IsTracked": true,
+  "IsDigitGrouping": false,
+  "IsMultiValue": true,
+  "IsTitle": false,
+  "IsMandatory": false,
+  "IsOwnership": false,
+  "IsCalculated": false,
+  "InstanceGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Attribute",
+    "Owner": "subscriptionrenuals",
+    "Alias": "Poisk"
+  }
+}

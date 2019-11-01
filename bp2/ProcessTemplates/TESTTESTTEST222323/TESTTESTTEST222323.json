@@ -1,0 +1,16 @@
+{
+  "$type": "Comindware.Platform.Contracts.TemplateInfoModel, Comindware.Platform.Contracts",
+  "Name": "TEST",
+  "Description": "TEST",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "ProcessTemplate",
+    "Alias": "TESTTESTTEST222323"
+  },
+  "IsDisabled": false,
+  "RelatedTemplate": {
+    "$type": "System.Nullable`1[[Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts]], mscorlib",
+    "Type": "RecordTemplate",
+    "Alias": "TESTTESTTEST"
+  }
+}

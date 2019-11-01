@@ -1,0 +1,79 @@
+{
+  "$type": "Comindware.Platform.Contracts.RoleConfigurationModel, Comindware.Platform.Contracts",
+  "Name": "Роль работы с отпусками",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "RoleConfiguration",
+    "Alias": "vacationRole"
+  },
+  "IsActive": true,
+  "Members": {
+    "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts]], mscorlib",
+    "$values": []
+  },
+  "RootResource": {
+    "$type": "Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts",
+    "Role": {
+      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+      "Type": "RoleConfiguration",
+      "Alias": "vacationRole"
+    },
+    "Name": "bp2",
+    "Description": "BusinessApp",
+    "Target": {
+      "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+      "Type": "Solution",
+      "Alias": "bp2"
+    },
+    "Children": {
+      "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
+      "$values": [
+        {
+          "$type": "Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts",
+          "Role": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "RoleConfiguration",
+            "Alias": "vacationRole"
+          },
+          "Name": "Согласование отпусков",
+          "Target": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "RecordTemplate",
+            "Alias": "approvingVacation"
+          },
+          "Children": {
+            "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
+            "$values": []
+          },
+          "TargetType": "RecordTemplate",
+          "Privileges": "Read, Create, Execute",
+          "AvailablePrivileges": "ContextUserExpression, ContextObjectCondition, Read, Create, Update, Delete, FullAccess"
+        },
+        {
+          "$type": "Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts",
+          "Role": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "RoleConfiguration",
+            "Alias": "vacationRole"
+          },
+          "Name": "Согласование отпусков",
+          "Target": {
+            "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+            "Type": "RecordTemplate",
+            "Alias": "approveVacation"
+          },
+          "Children": {
+            "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ResourcePrivilegeDescriptorModel, Comindware.Platform.Contracts]], mscorlib",
+            "$values": []
+          },
+          "TargetType": "ProcessTemplate",
+          "Privileges": "Read, Create, Execute",
+          "AvailablePrivileges": "ContextUserExpression, ContextObjectCondition, Read, Create, Update, Delete, FullAccess"
+        }
+      ]
+    },
+    "TargetType": "BusinessApp",
+    "Privileges": "Undefined",
+    "AvailablePrivileges": "Read, Create, Update, Delete, FullAccess"
+  }
+}

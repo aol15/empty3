@@ -1,0 +1,15 @@
+{
+  "$type": "Comindware.Platform.Contracts.TemplateInfoModel, Comindware.Platform.Contracts",
+  "Name": "Рассылка уведомлений",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "ProcessTemplate",
+    "Alias": "mailSending"
+  },
+  "IsDisabled": true,
+  "RelatedTemplate": {
+    "$type": "System.Nullable`1[[Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts]], mscorlib",
+    "Type": "RecordTemplate",
+    "Alias": "mailSendingRecord"
+  }
+}

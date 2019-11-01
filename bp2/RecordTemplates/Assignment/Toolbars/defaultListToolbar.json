@@ -1,0 +1,33 @@
+{
+  "$type": "Comindware.Platform.Contracts.ToolbarModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Toolbar",
+    "Owner": "Assignment",
+    "Alias": "defaultListToolbar"
+  },
+  "Name": "Toolbar for lists",
+  "IsDefaultForLists": true,
+  "IsDefaultForForms": false,
+  "IsDefaultForProcess": false,
+  "Items": {
+    "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ToolbarItemModel, Comindware.Platform.Contracts]], mscorlib",
+    "$values": [
+      {
+        "$type": "Comindware.Platform.Contracts.ToolbarItemModel, Comindware.Platform.Contracts",
+        "UserCommandGlobalAlias": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "UserCommand",
+          "Owner": "Assignment",
+          "Alias": "create_assignment"
+        },
+        "Name": "Создать Поручение",
+        "Order": 0,
+        "Type": "Action",
+        "IconType": "Undefined",
+        "IconClass": "frog",
+        "Severity": "Critical"
+      }
+    ]
+  }
+}

@@ -1,0 +1,141 @@
+{
+  "$type": "Comindware.Platform.Contracts.ToolbarModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Toolbar",
+    "Owner": "CheckNewFunctionality",
+    "Alias": "defaultTaskToolbar"
+  },
+  "Name": "Task toolbar",
+  "IsDefaultForLists": false,
+  "IsDefaultForForms": true,
+  "IsDefaultForProcess": false,
+  "Items": {
+    "$type": "System.Collections.Generic.List`1[[Comindware.Platform.Contracts.ToolbarItemModel, Comindware.Platform.Contracts]], mscorlib",
+    "$values": [
+      {
+        "$type": "Comindware.Platform.Contracts.ToolbarItemModel, Comindware.Platform.Contracts",
+        "UserCommandGlobalAlias": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "UserCommand",
+          "Owner": "CheckNewFunctionality",
+          "Alias": "editTask"
+        },
+        "Name": "Сохранить",
+        "Order": 0,
+        "Type": "Action",
+        "IconType": "Undefined",
+        "IconClass": "save",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.ToolbarItemModel, Comindware.Platform.Contracts",
+        "UserCommandGlobalAlias": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Name": "Разделитель",
+        "Order": 1,
+        "Type": "Splitter",
+        "IconType": "Undefined",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.ToolbarItemModel, Comindware.Platform.Contracts",
+        "UserCommandGlobalAlias": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "UserCommand",
+          "Owner": "CheckNewFunctionality",
+          "Alias": "QAReview"
+        },
+        "Name": "Взять на проверку",
+        "Order": 2,
+        "Type": "Action",
+        "IconType": "Undefined",
+        "IconClass": "briefcase",
+        "Severity": "Major"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.ToolbarItemModel, Comindware.Platform.Contracts",
+        "UserCommandGlobalAlias": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Name": "Разделитель",
+        "Order": 3,
+        "Type": "Splitter",
+        "IconType": "Undefined",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.ToolbarItemModel, Comindware.Platform.Contracts",
+        "UserCommandGlobalAlias": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "UserCommand",
+          "Owner": "CheckNewFunctionality",
+          "Alias": "Verified"
+        },
+        "Name": "Проверено",
+        "Order": 4,
+        "Type": "Action",
+        "IconType": "Undefined",
+        "IconClass": "check",
+        "Severity": "Critical"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.ToolbarItemModel, Comindware.Platform.Contracts",
+        "UserCommandGlobalAlias": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Name": "Разделитель",
+        "Order": 5,
+        "Type": "Splitter",
+        "IconType": "Undefined",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.ToolbarItemModel, Comindware.Platform.Contracts",
+        "UserCommandGlobalAlias": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "UserCommand",
+          "Owner": "CheckNewFunctionality",
+          "Alias": "Bugfix"
+        },
+        "Name": "Bugfix",
+        "Order": 6,
+        "Type": "Action",
+        "IconType": "Undefined",
+        "IconClass": "bug",
+        "Severity": "Fatal"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.ToolbarItemModel, Comindware.Platform.Contracts",
+        "UserCommandGlobalAlias": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "Undefined"
+        },
+        "Name": "Разделитель",
+        "Order": 7,
+        "Type": "Splitter",
+        "IconType": "Undefined",
+        "Severity": "None"
+      },
+      {
+        "$type": "Comindware.Platform.Contracts.ToolbarItemModel, Comindware.Platform.Contracts",
+        "UserCommandGlobalAlias": {
+          "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+          "Type": "UserCommand",
+          "Owner": "CheckNewFunctionality",
+          "Alias": "completeTask"
+        },
+        "Name": "Завершить задачу",
+        "Order": 8,
+        "Type": "Action",
+        "IconType": "Undefined",
+        "IconClass": "check-double",
+        "Severity": "None"
+      }
+    ]
+  }
+}

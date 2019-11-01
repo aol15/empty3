@@ -1,0 +1,27 @@
+{
+  "$type": "Comindware.Platform.Contracts.AttributeModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Attribute",
+    "Owner": "Project",
+    "Alias": "masterBranch"
+  },
+  "Type": "String",
+  "Format": "PlainText",
+  "Name": "MasterBranch",
+  "IsSystem": false,
+  "IsDisabled": true,
+  "IsUnique": false,
+  "IsIndexed": false,
+  "IsTracked": false,
+  "IsDigitGrouping": false,
+  "IsMultiValue": false,
+  "IsTitle": false,
+  "IsMandatory": false,
+  "IsOwnership": false,
+  "IsCalculated": false,
+  "InstanceGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  }
+}

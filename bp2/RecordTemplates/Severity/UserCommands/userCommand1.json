@@ -1,0 +1,25 @@
+{
+  "$type": "Comindware.Platform.Contracts.UserCommandConfigurationModel, Comindware.Platform.Contracts",
+  "GlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "UserCommand",
+    "Owner": "Severity",
+    "Alias": "userCommand1"
+  },
+  "Name": "Create",
+  "Description": "Create",
+  "IsSystem": false,
+  "IsDisabled": false,
+  "IsPrepare": false,
+  "SkipValidation": false,
+  "Context": "Record",
+  "Multiplicity": "OneByOne",
+  "Kind": "Create",
+  "ResultType": "DataChange",
+  "RelatedEntityGlobalAlias": {
+    "$type": "Comindware.Platform.Contracts.GlobalAlias, Comindware.Platform.Contracts",
+    "Type": "Undefined"
+  },
+  "LockStateChangeType": "Undefined",
+  "LockStateVisibilityType": "Undefined"
+}
