@@ -1,8 +1,7 @@
 {
   "$type": "Comindware.Platform.Contracts.TransferMetadata, Comindware.Platform.Contracts",
-  "Name": "System business app",
-  "Alias": "systemSolution",
-  "Description": "Системное бизнес приложение",
+  "Name": "bp",
+  "Alias": "bp",
   "Database": "b61aa080-3ba8-4722-ae89-3a7dc6dbd289",
   "Version": "3.5.460.0"
 }
